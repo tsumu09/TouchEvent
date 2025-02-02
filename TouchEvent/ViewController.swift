@@ -15,6 +15,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     var selectedImageName: String = "flower"
     
     var ImageViewArray: [UIImageView] = []
+    var redoArray: [UIImageView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
         
         ImageViewArray.append(imageView)
         
+    }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectImage1() {
@@ -76,7 +81,18 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBAction func undo() {
         if ImageViewArray.isEmpty { return }
         ImageViewArray.last!.removeFromSuperview()
+        let lastImageView = ImageViewArray.last!
+        redoArray.append(lastImageView)
+        lastImageView.removeFromSuperview()
         ImageViewArray.removeLast()
+    }
+    
+    @IBAction func redo() {
+        if redoArray.isEmpty { return }
+        let lastRedoImageView = redoArray.last!
+        ImageViewArray.append(lastRedoImageView)
+        self.view.addSubview(lastRedoImageView)
+        redoArray.removeLast()
     }
     //
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
