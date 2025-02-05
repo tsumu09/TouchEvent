@@ -15,12 +15,6 @@ class FirstViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     var filter: CIFilter!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     @IBAction func takePhoto() {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -92,6 +86,18 @@ class FirstViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         present(activityViewController, animated: true, completion: nil)
     }
+
     
-    
+    @IBOutlet weak var textField: UITextField! // UITextFieldのアウトレット
+        @IBOutlet weak var resultLabel: UILabel!   // 結果を表示するUILabelのアウトレット
+
+        @IBAction func buttonPressed() {
+            // ボタンが押されたときの処理
+            if let text = textField.text, !text.isEmpty {
+                resultLabel.text = "入力されたテキスト: \(text)"
+            } else {
+                resultLabel.text = "テキストを入力してください。"
+            }
+        }
+        
 }
