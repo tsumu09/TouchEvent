@@ -93,31 +93,14 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Text"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="87o-Yv-BvZ" eventType="touchUpInside" id="sJ0-ja-md3"/>
-                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lee-HM-Ll4">
-                                <rect key="frame" x="81" y="343" width="230" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V21-7s-hmM">
-                                <rect key="frame" x="81" y="343" width="230" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wHR-kQ-bF2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="cameraImageView" destination="J1U-uu-YXa" id="UTG-tI-OEk"/>
-                        <outlet property="resultLabel" destination="V21-7s-hmM" id="SHr-uH-lIH"/>
-                        <outlet property="textField" destination="lee-HM-Ll4" id="U7h-Ga-fi5"/>
+                        <outlet property="textButton" destination="80z-R0-ho3" id="kXq-Gp-UzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcN-7w-hjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
